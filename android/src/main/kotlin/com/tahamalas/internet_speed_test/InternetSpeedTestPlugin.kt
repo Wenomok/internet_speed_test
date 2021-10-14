@@ -161,8 +161,9 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
 //                testListener.onProgress(percent.toDouble(), report.transferRateBit.toDouble())
             }
         })
+        println(testServer)
 //        speedTestSocket.startFixedUpload("http://ipv4.ikoula.testdebit.info/", 10000000, 10000)
-        speedTestSocket.startUploadRepeat(testServer, 20000, 500, 2000, object : IRepeatListener {
+        speedTestSocket.startUploadRepeat(testServer, 20000, 500, 200000, object : IRepeatListener {
             override fun onCompletion(report: SpeedTestReport) {
                 // called when download/upload is complete
                 println("[COMPLETED] rate in octet/s : " + report.transferRateOctet)
