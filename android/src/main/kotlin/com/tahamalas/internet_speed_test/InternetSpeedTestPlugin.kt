@@ -30,7 +30,14 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
         when {
             call.method == "startListening" -> mapToCall(result, call.arguments)
             call.method == "cancelListening" -> cancelListening(call.arguments, result)
-            call.method == "stopDownloadTest" -> activity.runOnUiThread { speedTestSocket.forceStopTask() }
+            call.method == "stopDownloadTest" -> {
+                val runnable = Runnable {
+                    speedTestSocket.forceStopTask()
+                }
+                val thread = Thread(runnable)
+                thread.start()
+            }
+
             else -> result.notImplemented()
         }
     }
