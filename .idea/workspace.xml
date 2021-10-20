@@ -9,35 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d08f3a7f-6fc0-4431-8f3d-cb256301b342" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/tahamalas/internet_speed_test/CallbacksEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/tahamalas/internet_speed_test/CallbacksEnum.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/tahamalas/internet_speed_test/InternetSpeedTestPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/tahamalas/internet_speed_test/InternetSpeedTestPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/ios/Classes/Network/DownloadService/CustomHostDownloadService.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/ios/Classes/Network/DownloadService/CustomHostDownloadService.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/ios/Classes/SpeedTest.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/ios/Classes/SpeedTest.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/ios/Classes/SwiftInternetSpeedTestPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/ios/Classes/SwiftInternetSpeedTestPlugin.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/lib/callbacks_enum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/lib/callbacks_enum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/lib/internet_speed_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/internet_speed_test/lib/internet_speed_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/Network/DownloadService/CustomHostDownloadService.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Network/DownloadService/CustomHostDownloadService.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/SpeedTest.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SpeedTest.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftInternetSpeedTestPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftInternetSpeedTestPlugin.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/callbacks_enum.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/callbacks_enum.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/internet_speed_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/internet_speed_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
