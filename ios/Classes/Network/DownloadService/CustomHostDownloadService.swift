@@ -14,13 +14,21 @@ class CustomHostDownloadService: NSObject, SpeedService {
     private var current: ((Speed, Speed) -> ())!
     private var final: ((Result<Speed, NetworkError>) -> ())!
     
+    private var downloadTask: URLSessionDownloadTask?
+    
     func test(_ url: URL, fileSize: Int, timeout: TimeInterval, current: @escaping (Speed, Speed) -> (), final: @escaping (Result<Speed, NetworkError>) -> ()) {
         self.current = current
         self.final = final
         let resultURL = HostURLFormatter(speedTestURL: url).downloadURL(size: fileSize)
-        URLSession(configuration: sessionConfiguration(timeout: timeout), delegate: self, delegateQueue: OperationQueue.main)
+        self.downloadTask = URLSession(configuration: sessionConfiguration(timeout: timeout), delegate: self, delegateQueue: OperationQueue.main)
             .downloadTask(with: resultURL)
-            .resume()
+        self.downloadTask?.resume()
+    }
+    
+    func stop() {
+        self.downloadTask?.cancel(byProducingResumeData: { (data) in
+            
+        })
     }
 }
 

@@ -30,6 +30,7 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
         when {
             call.method == "startListening" -> mapToCall(result, call.arguments)
             call.method == "cancelListening" -> cancelListening(call.arguments, result)
+            call.method == "stopDownloadTest" -> speedTestSocket.closeSocket()
             else -> result.notImplemented()
         }
     }

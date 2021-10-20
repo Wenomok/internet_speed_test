@@ -19,6 +19,8 @@ class _MyAppState extends State<MyApp> {
 
   String unitText = 'Mb/s';
 
+  int count = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,6 +60,14 @@ class _MyAppState extends State<MyApp> {
                         unitText = unit == SpeedUnit.Kbps ? 'Kb/s' : 'Mb/s';
                         downloadProgress = percent.toStringAsFixed(2);
                       });
+
+                      if(count == 3) {
+                        count = 0;
+                        internetSpeedTest.stopDownloadTest();
+                        print("SHOULD STOP IT!!!");
+                      } else {
+                        count++;
+                      }
                     },
                     onError: (String errorMessage, String speedTestError) {
                       print(

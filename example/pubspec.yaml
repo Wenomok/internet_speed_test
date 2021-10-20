@@ -1,5 +1,6 @@
 name: internet_speed_test_example
 description: Demonstrates how to use the internet_speed_test plugin.
+version: 1.0.0+1
 publish_to: 'none'
 
 environment:

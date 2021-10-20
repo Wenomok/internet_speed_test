@@ -150,6 +150,12 @@ class InternetSpeedTest {
         fileSize: fileSize);
   }
 
+  Future<void> stopDownloadTest() async {
+    await _channel.invokeMethod("stopDownloadTest", {
+      "id": CallbacksEnum.STOP_DOWNLOAD_TEST.index
+    });
+  }
+
   Future<CancelListening> startUploadTesting({
     required DoneCallback onDone,
     required ProgressCallback onProgress,
