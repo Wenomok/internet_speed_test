@@ -219,7 +219,7 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
 
 
         speedTestSocket.startDownloadRepeat(testServer,
-                20000, 500, object : IRepeatListener {
+                40000, 5000, object : IRepeatListener {
             override fun onCompletion(report: SpeedTestReport) {
                 // called when download/upload is complete
                 println("[COMPLETED] rate in octet/s : " + report.transferRateOctet)
