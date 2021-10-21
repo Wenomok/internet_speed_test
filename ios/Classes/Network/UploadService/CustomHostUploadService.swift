@@ -14,6 +14,8 @@ class CustomHostUploadService: NSObject, SpeedService {
     private var current: ((Speed, Speed) -> ())!
     private var final: ((Result<Speed, NetworkError>) -> ())!
     
+    private var uploadTask: URLSessionUploadTask?
+    
     func test(_ url: URL, fileSize: Int, timeout: TimeInterval, current: @escaping (Speed, Speed) -> (), final: @escaping (Result<Speed, NetworkError>) -> ()) {
         self.current = current
         self.final = final
@@ -24,9 +26,31 @@ class CustomHostUploadService: NSObject, SpeedService {
                                        "Content-Length": "\(fileSize)",
                                        "Connection": "keep-alive"]
         
-        URLSession(configuration: sessionConfiguration(timeout: timeout / 1000), delegate: self, delegateQueue: OperationQueue.main)
+        self.uploadTask = URLSession(configuration: sessionConfiguration(timeout: timeout / 1000), delegate: self, delegateQueue: OperationQueue.main)
             .uploadTask(with: request, from: Data(count: fileSize))
-            .resume()
+        self.uploadTask?.resume()
+    }
+    
+    func test(_ url: URL, fileSize: Int, timeout: TimeInterval, authToken: String? = nil, current: @escaping (Speed, Speed) -> (), final: @escaping (Result<Speed, NetworkError>) -> ()) {
+        self.current = current
+        self.final = final
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = ["Content-Type": "application/octet-stream",
+                                       "Accept-Encoding": "gzip, deflate",
+                                       "Content-Length": "\(fileSize)",
+                                       "Connection": "keep-alive"]
+        if let authToken = authToken {
+            request.allHTTPHeaderFields?["Authorization"] = "Bearer \(authToken)"
+        }
+        
+        self.uploadTask = URLSession(configuration: sessionConfiguration(timeout: timeout / 1000), delegate: self, delegateQueue: OperationQueue.main)
+            .uploadTask(with: request, from: Data(count: fileSize))
+        self.uploadTask?.resume()
+    }
+    
+    func stop() {
+        self.uploadTask?.cancel()
     }
 }
 

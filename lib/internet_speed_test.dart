@@ -161,10 +161,17 @@ class InternetSpeedTest {
     required ProgressCallback onProgress,
     required ErrorCallback onError,
     int fileSize = 200000,
+    String? authToken = null,
     String testServer = 'http://ipv4.ikoula.testdebit.info/',
   }) async {
     return await _startListening(Tuple3(onError, onProgress, onDone),
-        CallbacksEnum.START_UPLOAD_TESTING, testServer,
+        CallbacksEnum.START_UPLOAD_TESTING, testServer, args: {"auth_token": authToken},
         fileSize: fileSize);
+  }
+
+  Future<void> stopUploadTest() async {
+    await _channel.invokeMethod("stopUploadTest", {
+      "id": CallbacksEnum.STOP_UPLOAD_TEST.index
+    });
   }
 }
