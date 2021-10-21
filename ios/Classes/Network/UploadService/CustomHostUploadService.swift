@@ -41,7 +41,7 @@ class CustomHostUploadService: NSObject, SpeedService {
                                        "Content-Length": "\(fileSize)",
                                        "Connection": "keep-alive"]
         if let authToken = authToken {
-            request.allHTTPHeaderFields?["Authorization"] = "Bearer \(authToken)"
+            request.allHTTPHeaderFields?["Authorization"] = "Basic \(authToken)"
         }
         
         self.uploadTask = URLSession(configuration: sessionConfiguration(timeout: timeout / 1000), delegate: self, delegateQueue: OperationQueue.main)
