@@ -38,7 +38,7 @@ class InternetSpeedTest {
 
         if (id == CallbacksEnum.START_DOWNLOAD_TESTING.index) {
           if (type == ListenerEnum.COMPLETE.index) {
-            double transferRate = call.arguments['transferRate'] ?? 0.0;
+            double transferRate = call.arguments['transferRate']?.toDouble() ?? 0.0;
 
             downloadSteps++;
             downloadRate +=
@@ -65,8 +65,8 @@ class InternetSpeedTest {
             downloadRate = 0;
             _callbacksById.remove(id);
           } else if (type == ListenerEnum.PROGRESS.index) {
-            double transferRate = call.arguments['transferRate'] ?? 0.0;
-            double percent = call.arguments['percent'] ?? 0.0;
+            double transferRate = call.arguments['transferRate']?.toDouble() ?? 0.0;
+            double percent = call.arguments['percent']?.toDouble() ?? 0.0;
 
             double rate = (transferRate ~/ 1000).toDouble();
             print('rate is $rate');
@@ -79,7 +79,7 @@ class InternetSpeedTest {
           }
         } else if (id == CallbacksEnum.START_UPLOAD_TESTING.index) {
           if (type == ListenerEnum.COMPLETE.index) {
-            double transferRate = call.arguments['transferRate'] ?? 0.0;
+            double transferRate = call.arguments['transferRate']?.toDouble() ?? 0.0;
             print('onComplete : $transferRate}');
 
             uploadSteps++;
@@ -103,8 +103,8 @@ class InternetSpeedTest {
             print('onError : $errorMessage}');
             _callbacksById[id]?.item1(errorMessage, speedTestError);
           } else if (type == ListenerEnum.PROGRESS.index) {
-            double transferRate = call.arguments['transferRate'] ?? 0.0;
-            double percent = call.arguments['percent'] ?? 0.0;
+            double transferRate = call.arguments['transferRate']?.toDouble() ?? 0.0;
+            double percent = call.arguments['percent']?.toDouble() ?? 0.0;
 
             double rate = (transferRate ~/ 1000).toDouble();
             print('rate is $rate');
