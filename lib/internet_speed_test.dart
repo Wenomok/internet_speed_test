@@ -28,7 +28,6 @@ class InternetSpeedTest {
 
   Future<void> _methodCallHandler(MethodCall call) async {
     print('arguments are ${call.arguments}');
-//    print('arguments type is  ${call.arguments['type']}');
     print('callbacks are $_callbacksById');
     switch (call.method) {
       case 'callListener':
@@ -44,14 +43,14 @@ class InternetSpeedTest {
             SpeedUnit unit = SpeedUnit.Kbps;
             average /= 1000;
             unit = SpeedUnit.Mbps;
-            _callbacksById[call.arguments["id"]]!.item3(average, unit);
+            _callbacksById[call.arguments["id"]]?.item3(average, unit);
             downloadSteps = 0;
             downloadRate = 0;
             _callbacksById.remove(call.arguments["id"]);
           } else if (call.arguments['type'] == ListenerEnum.ERROR.index) {
             print('onError : ${call.arguments["speedTestError"]}');
             print('onError : ${call.arguments["errorMessage"]}');
-            _callbacksById[call.arguments["id"]]!.item1(
+            _callbacksById[call.arguments["id"]]?.item1(
                 call.arguments['errorMessage'],
                 call.arguments['speedTestError']);
             downloadSteps = 0;
@@ -82,14 +81,14 @@ class InternetSpeedTest {
             SpeedUnit unit = SpeedUnit.Kbps;
             average /= 1000;
             unit = SpeedUnit.Mbps;
-            _callbacksById[call.arguments["id"]]!.item3(average, unit);
+            _callbacksById[call.arguments["id"]]?.item3(average, unit);
             uploadSteps = 0;
             uploadRate = 0;
             _callbacksById.remove(call.arguments["id"]);
           } else if (call.arguments['type'] == ListenerEnum.ERROR.index) {
             print('onError : ${call.arguments["speedTestError"]}');
             print('onError : ${call.arguments["errorMessage"]}');
-            _callbacksById[call.arguments["id"]]!.item1(
+            _callbacksById[call.arguments["id"]]?.item1(
                 call.arguments['errorMessage'],
                 call.arguments['speedTestError']);
           } else if (call.arguments['type'] == ListenerEnum.PROGRESS.index) {
