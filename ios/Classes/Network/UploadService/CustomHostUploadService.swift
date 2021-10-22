@@ -36,7 +36,7 @@ class CustomHostUploadService: NSObject, SpeedService {
         self.final = final
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.allHTTPHeaderFields = ["Content-Type": "multipart/form-data; boundary=----WebKitFormBoundaryJGZnc3UGS2EAA9BG",//"application/octet-stream",
+        request.allHTTPHeaderFields = ["Content-Type": "application/octet-stream",
                                        "Accept-Encoding": "gzip, deflate",
                                        "Content-Length": "\(fileSize)",
                                        "Connection": "keep-alive"]
