@@ -37,6 +37,13 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
                 val thread = Thread(runnable)
                 thread.start()
             }
+            call.method == "stopUploadTest" -> {
+                val runnable = Runnable {
+                    speedTestSocket.forceStopTask()
+                }
+                val thread = Thread(runnable)
+                thread.start()
+            }
 
             else -> result.notImplemented()
         }

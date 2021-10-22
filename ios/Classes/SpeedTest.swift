@@ -89,15 +89,20 @@ public final class SpeedTest {
         downloadService.stop()
     }
     
-    public func runUploadTest(for host: URL, size: Int, timeout: TimeInterval, current: @escaping (Speed) -> (), final: @escaping (Result<Speed, NetworkError>) -> ()) {
+    public func runUploadTest(for host: URL, size: Int, timeout: TimeInterval, authToken: String? = nil, current: @escaping (Speed) -> (), final: @escaping (Result<Speed, NetworkError>) -> ()) {
         uploadService.test(host,
                            fileSize: size,
                            timeout: timeout,
+                           authToken: authToken,
                            current: { (_, avgSpeed) in
                             current(avgSpeed)
                         }, final: { result in
                             final(result)
                         })
+    }
+    
+    public func stopUploadTest() {
+        uploadService.stop()
     }
     
     private func pingAllHosts(hosts: [URL], timeout: TimeInterval, closure: @escaping ([(host: URL, ping: Int)]) -> ()) {
