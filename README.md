@@ -7,8 +7,9 @@ Internet speed test plugin to integrate it in your app whenever you want.
 ### Add dependency
 
 ```yaml
-dependencies:
-  internet_speed_test: ^1.5.1
+internet_speed_test:
+    git:
+      url: https://github.com/Wenomok/internet_speed_test
 ```
 
 ### Example
