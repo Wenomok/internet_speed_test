@@ -64,7 +64,7 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
             val channel = MethodChannel(registrar.messenger(), "internet_speed_test")
             val activity = registrar.activity()
             if(activity != null) {
-                channel.setMethodCallHandler(InternetSpeedTestPlugin(registrar.activity(), channel, registrar))
+                channel.setMethodCallHandler(InternetSpeedTestPlugin(activity, channel, registrar))
             }
         }
     }
