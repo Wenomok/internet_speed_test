@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
                   Text('Download rate  $downloadRate $unitText'),
                 ],
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: Text('start testing'),
                 onPressed: () {
                   internetSpeedTest.startDownloadTesting(
@@ -84,7 +84,7 @@ class _MyAppState extends State<MyApp> {
                   Text('Upload rate  $uploadRate Kb/s'),
                 ],
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: Text('start testing'),
                 onPressed: () {
                   internetSpeedTest.startUploadTesting(

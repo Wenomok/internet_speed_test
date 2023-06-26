@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.tahamalas.internet_speed_test.internet_speed_test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.tahamalas.internet_speed_test.internet_speed_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/internet_speed_test.iml" filepath="$PROJECT_DIR$/.idea/modules/internet_speed_test.iml" />
     </modules>
   </component>
