@@ -18,7 +18,8 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
 
 
     private var result: Result? = null
-    private var speedTestSocket: SpeedTestSocket = SpeedTestSocket()
+    private var downloadTestSocket: SpeedTestSocket = SpeedTestSocket()
+    private var uploadTestSocket: SpeedTestSocket = SpeedTestSocket()
 
 
     init {
@@ -32,14 +33,14 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
             call.method == "cancelListening" -> cancelListening(call.arguments, result)
             call.method == "stopDownloadTest" -> {
                 val runnable = Runnable {
-                    speedTestSocket.forceStopTask()
+                    downloadTestSocket.forceStopTask()
                 }
                 val thread = Thread(runnable)
                 thread.start()
             }
             call.method == "stopUploadTest" -> {
                 val runnable = Runnable {
-                    speedTestSocket.forceStopTask()
+                    uploadTestSocket.forceStopTask()
                 }
                 val thread = Thread(runnable)
                 thread.start()
@@ -157,7 +158,7 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
     private fun testUploadSpeed(testListener: TestListener, testServer: String) {
         // add a listener to wait for speedtest completion and progress
         println("Testing Testing")
-        speedTestSocket.addSpeedTestListener(object : ISpeedTestListener {
+        uploadTestSocket.addSpeedTestListener(object : ISpeedTestListener {
             override fun onCompletion(report: SpeedTestReport) {
 //                // called when download/upload is complete
 //                println("[COMPLETED] rate in octet/s : " + report.transferRateOctet)
@@ -181,7 +182,7 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
         })
         println(testServer)
 //        speedTestSocket.startFixedUpload("http://ipv4.ikoula.testdebit.info/", 10000000, 10000)
-        speedTestSocket.startUploadRepeat(testServer, 60000, 1000, 1000000, object : IRepeatListener {
+        uploadTestSocket.startUploadRepeat(testServer, 60000, 1000, 1000000, object : IRepeatListener {
             override fun onCompletion(report: SpeedTestReport) {
                 // called when download/upload is complete
                 println("[COMPLETED] rate in octet/s : " + report.transferRateOctet)
@@ -203,7 +204,7 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
     private fun testDownloadSpeed(testListener: TestListener, testServer: String) {
         // add a listener to wait for speedtest completion and progress
         println("Testing Testing")
-        speedTestSocket.addSpeedTestListener(object : ISpeedTestListener {
+        downloadTestSocket.addSpeedTestListener(object : ISpeedTestListener {
             override fun onCompletion(report: SpeedTestReport) {
 //                // called when download/upload is complete
 //                println("[COMPLETED] rate in octet/s : " + report.transferRateOctet)
@@ -228,7 +229,7 @@ public class InternetSpeedTestPlugin(internal var activity: Activity, internal v
 //        speedTestSocket.startDownloadRepeat("http://ipv4.ikoula.testdebit.info/1M.iso", 10000)
 
 
-        speedTestSocket.startDownloadRepeat(testServer,
+        downloadTestSocket.startDownloadRepeat(testServer,
                 60000, 1000, object : IRepeatListener {
             override fun onCompletion(report: SpeedTestReport) {
                 // called when download/upload is complete
